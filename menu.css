@@ -29,14 +29,30 @@ nav   .icon-nav{
     height: 45px;
 }
 .icon-nav span{
+    margin: 2px 0;S
     display: block;
     width: 60%;
     height: 2px;
     background-color: var(--gray);
 }
+.icon-nav:hover span:nth-child(2){
+    display: none;
+}
+.icon-nav:hover span:nth-child(1){
+    transform: rotate(-45deg);
+    position: absolute;
+}
+
 nav ul{
     list-style: none;
-    display: none;
+    display: flex;
+}
+.icon-nav:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    width: 420px;
+    right: 0;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -46,7 +62,10 @@ nav ul{
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-     
+     nav  .icon-nav {
+        display: none;
+     }
+
 }
 
 /* // Large devices (desktops, 992px and up) */
